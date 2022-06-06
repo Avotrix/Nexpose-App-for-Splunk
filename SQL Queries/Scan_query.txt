@@ -1,0 +1,17 @@
+SELECT scan_id,
+         site_id,
+         started,
+         finished,
+         status,
+         type,
+        ds.scan_template,
+        ds.scan_engine
+FROM dim_scan
+LEFT JOIN 
+    (SELECT ds.site_id,
+         ds.name,
+         ds.scan_template,
+         ds.scan_engine
+    FROM dim_site ds)ds USING(site_id)
+WHERE started > ?
+ORDER BY started ASC
