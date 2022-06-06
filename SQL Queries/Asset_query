@@ -1,0 +1,24 @@
+SELECT  da.last_assessed_for_vulnerabilities,
+dsa.asset_id as asset_id, dsa.site_id as site_id, 
+ds.name as site_name, da.mac_address, da.ip_address as ip, da.host_name as hostname,da.os_description as description,
+ da.os_vendor as vendor_product, da.host_type,da.os_architecture as family,da.os_version as version,
+da.os_system as os, fa.vulnerabilities, fa.critical_vulnerabilities, 
+fa.severe_vulnerabilities, fa.moderate_vulnerabilities, 
+  fa.malware_kits, fa.exploits, fa.vulnerability_instances, 
+  fa.risk_score as riskscore, fa.pci_status,
+  das.protocols,das.services,
+  
+  dagc.asset_group_accounts,
+  dasoft.installed_software
+					
+from dim_site_asset dsa
+
+LEFT  JOIN (select da.asset_id,da.os_architecture, da.os_version, da.os_system, da.os_description, da.ip_address, da.mac_address, da.host_name, da.os_vendor, da.host_type, da.last_assessed_for_vulnerabilities FROM dim_asset da) da USING (asset_id)
+LEFT  JOIN (select ds.site_id, ds.name FROM dim_site ds) ds using (site_id)
+LEFT  JOIN (select fa.asset_id, fa.vulnerabilities, fa.critical_vulnerabilities, fa.severe_vulnerabilities, fa.moderate_vulnerabilities, fa.malware_kits, fa.exploits, fa.vulnerability_instances, fa.risk_score, fa.pci_status FROM fact_asset fa) fa USING (asset_id)
+LEFT JOIN (select  das.asset_id, (string_agg(DISTINCT das.name, ';')) as services, (string_agg(DISTINCT das.protocol, ';')) as protocols FROM dim_asset_service das GROUP BY das.asset_id) das using (asset_id)
+LEFT  JOIN (select dagc.asset_id, (string_agg(DISTINCT dagc.name,';')) as asset_group_accounts FROM dim_asset_group_account dagc GROUP BY dagc.asset_id) dagc USING (asset_id)
+LEFT  JOIN (select dasoft.asset_id, (string_agg(DISTINCT dasoft.name,';')) as installed_software FROM dim_asset_software dasoft GROUP BY dasoft.asset_id) dasoft   USING (asset_id)
+
+WHERE last_assessed_for_vulnerabilities > ?
+ORDER BY last_assessed_for_vulnerabilities ASC
