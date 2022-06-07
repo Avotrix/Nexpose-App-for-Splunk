@@ -1,5 +1,6 @@
 # Welcome to the Nexpose App for Splunk
-This Splunk App will give you an Insight of the Rapid7 Nexpose logs by using various Knowledge object.
+This Splunk App will give you an Insight of the Rapid7 Nexpose logs by using various Knowledge object. <br />
+The App can be downloaded from Splunkbase().
 
 # About
 Author: Avotrix <br />
