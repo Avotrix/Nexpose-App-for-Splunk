@@ -2,7 +2,7 @@
 This Splunk App will give you an Insight of the Rapid7 Nexpose logs by using various Knowledge object.
 
 # About
-Author: Avotrix
+Author: Avotrix <br />
 Version: 1.0.0
 
 # Release Notes
@@ -14,7 +14,7 @@ Please include a support diagnostic file when creating a support ticket. Use the
       •	$SPLUNK_HOME/bin/splunk diag --collect=app:  nexpose_app_for_splunk
       
 # Installation
-•	Software requirements:
+•	Software requirements:<br />
     I.	Splunk Enterprise system requirements: This App runs on Splunk Enterprise hence all of the Splunk Enterprise system requirements apply
 
 # Deployment Guide
@@ -28,9 +28,9 @@ Please include a support diagnostic file when creating a support ticket. Use the
         a.Install the App on the Search Head.
         
 # Populating Dashboard
-To Populate the Dashboard kindly specify the index and sourcetype in below macros:
-     For Vulnerability Input: `nexpose-vulnerability-index-and-sourcetype`
-     For Asset Input: `nexpose-asset-index-and-sourcetype`
+To Populate the Dashboard kindly specify the index and sourcetype in below macros:<br />
+     For Vulnerability Input: `nexpose-vulnerability-index-and-sourcetype`<br />
+     For Asset Input: `nexpose-asset-index-and-sourcetype`<br />
      For Scan Input: `nexpose-scan-index-and-sourcetype`(Kindly refer to section mentioned below(Second Method to onboard logs) to know how onboard the data of this                       input.)
      
 # Second Method to onboard the nexpose logs
