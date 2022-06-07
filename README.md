@@ -31,7 +31,7 @@ Please include a support diagnostic file when creating a support ticket. Use the
 To Populate the Dashboard kindly specify the index and sourcetype in below macros:
      For Vulnerability Input: `nexpose-vulnerability-index-and-sourcetype`
      For Asset Input: `nexpose-asset-index-and-sourcetype`
-     For Scan Input: `nexpose-scan-index-and-sourcetype` -- Kindly refer to section mentioned below(Second Method to onboard logs) to know how onboard the data of this                       input.
+     For Scan Input: `nexpose-scan-index-and-sourcetype`(Kindly refer to section mentioned below(Second Method to onboard logs) to know how onboard the data of this                       input.)
      
 # Second Method to onboard the nexpose logs
 In this method we will be export the nexpose data to an exteranl database and then by using "Splunk DB Connect" we are going to pull the logs.
