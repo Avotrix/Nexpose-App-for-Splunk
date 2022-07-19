@@ -34,8 +34,10 @@ To Populate the Dashboard kindly specify the index and sourcetype in below macro
      For Asset Input: `nexpose-asset-index-and-sourcetype`<br />
      For Scan Input: `nexpose-scan-index-and-sourcetype`(Kindly refer to section mentioned below(Second Method to onboard logs) to know how onboard the data of this                       input.)
      
-# Second Method to onboard the nexpose logs
-In this method we will be export the nexpose data to an exteranl database and then by using "Splunk DB Connect" we are going to pull the logs.
+# Ways to onboard the nexpose logs
+FIRST: By using nexpose add-on from splunkbase.
+
+SECOND: In this method we will be export the nexpose data to an exteranl database and then by using "Splunk DB Connect" we are going to pull the logs.
   - In the Nexpose Side to export the data, the setting can be found under: "Settings>Data warehouse".
   - This method can be used either with your current version of Nexpose or you can also download the 
   	  Nexpose community edition(https://www.rapid7.com/info/nexpose-community/).
