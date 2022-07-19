@@ -37,8 +37,8 @@ To Populate the Dashboard kindly specify the index and sourcetype in below macro
 # Ways to onboard the nexpose logs
 FIRST: By using nexpose add-on from splunkbase.
 
-SECOND: In this method we will be export the nexpose data to an exteranl database and then by using "Splunk DB Connect" we are going to pull the logs.
-  - In the Nexpose Side to export the data, the setting can be found under: "Settings>Data warehouse".
+SECOND: In this method we will be exporting the nexpose data to an exteranl database and then by using "Splunk DB Connect" we are going to ingest the logs.
+  - On the Nexpose Side to export the data, the setting can be found under: "Settings>Data warehouse".
   - This method can be used either with your current version of Nexpose or you can also download the 
   	  Nexpose community edition(https://www.rapid7.com/info/nexpose-community/).
   - The steps required to install "Nexpose community edition/Rapid7 nexpose" are mentioned in "Nexpose Community Edition Installation" directory in the repo.
