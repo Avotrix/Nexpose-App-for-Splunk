@@ -42,6 +42,7 @@ SECOND: In this method we will be exporting the nexpose data to an exteranl data
   - This method can be used either with your current version of Nexpose or you can also download the 
   	  Nexpose community edition(https://www.rapid7.com/info/nexpose-community/).
   - The steps required to install "Nexpose community edition/Rapid7 nexpose" are mentioned in "Nexpose Community Edition Installation" directory in the repo.
+      (Note: The version used here is Nexpose Community edition-6.6.152)
   - The document in the directory also contains the additonal steps you have to keep in mind when exporting the nexpose data to external postgress database.
   - After you have exported the Nexpose Data to external database then install "Splunk DB Connect" on the Heavy Forwarder and use the queries mentioned in the
      "Queries" directory in the repo to pull the logs.
